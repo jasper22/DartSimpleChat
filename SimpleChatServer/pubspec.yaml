@@ -1,4 +1,13 @@
-name: SimpleChatServer
-description: A sample command-line application
+name: DartSimpleChat_Server
+version: 0.0.1
+author: Aleksandr (jjasper22@gmail.com)
+description: Simple Dart based chat server
+homepage: https://github.com/jasper22/DartSimpleChat
+environment:
+  sdk: '>=0.4.3'
+dependencies:
+  unittest: any
+
 #dependencies:
+#  js: any
 #  unittest: any

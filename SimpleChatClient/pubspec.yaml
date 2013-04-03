@@ -1,6 +1,11 @@
-name: SimpleChatClient
-description: A sample WebUI application
+name: DartSimpleChat_Client
+version: 0.0.1
+author: Aleksandr <jjasper22@gmail.com>
+description: Simple dart/web based chat client
+homepage: https://github.com/jasper22/DartSimpleChat
+environment:
+  sdk: '>=0.4.3'
 dependencies:
-  browser: any
   js: any
+  browser: any
   web_ui: any
