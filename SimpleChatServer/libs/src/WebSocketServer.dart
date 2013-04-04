@@ -48,7 +48,7 @@ class WebSocketServer extends WebServerBase
         ,
         onError: (AsyncError e)
                   {
-                    _onErrorEvent.Raise(new ErrorData("Server could not be binded!",e));
+                    _onErrorEvent.Raise(new ErrorData("Server could not be binded!", e));
                   }
         );
   }
