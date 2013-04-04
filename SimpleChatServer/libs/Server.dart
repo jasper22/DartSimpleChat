@@ -18,7 +18,7 @@ abstract class WebServerBase
   
   //
   // True if server running, otherwise 'false'
-  bool _isRunning;
+  bool _isRunning = false;
 
   //
   // Events
@@ -38,8 +38,6 @@ abstract class WebServerBase
     
     _onErrorEvent = new EventStream<ErrorData>();
     _onNotificationEvent = new EventStream<String>();
-    
-    _isRunning = true;
   }
   
   ///
@@ -82,6 +80,13 @@ abstract class WebServerBase
   bool get IsRunning
   {
     return _isRunning;
+  }
+  
+  ///
+  /// Private set for server 'running' status
+  void set _IsRunning(bool value)
+  {
+    _isRunning = value;
   }
   
   ///

@@ -9,9 +9,16 @@ void main()
   //
   // Events
   serverBase.onNotification.listen(
-      (message) { print("Server message: $message"); },
-      onError: (error) { print("Error occurred: $error"); }, 
-      onDone: () { print("Done populating stream"); });
+      (message) { print("Server message: $message"); 
+      });
+
+  
+  serverBase.onError.listen(
+      (errorData) {
+  
+        print("Error occurred in web server. Error is: $errorData");
+      
+      });
   
   if(serverBase.IsRunning)
   {
