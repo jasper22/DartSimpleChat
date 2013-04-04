@@ -7,6 +7,7 @@ import 'dart:async';
 part 'src/ErrorData.dart';
 part 'src/WebSocketServer.dart';
 part 'src/EventStream.dart';
+part 'src/SimpleMessage.dart';
 
 ///
 /// Base web server implementation that all
@@ -25,6 +26,9 @@ abstract class WebServerBase
   EventStream<ErrorData> _onErrorEvent;
   EventStream<String> _onNotificationEvent;
 
+  //
+  // Actuall 'messages' stream
+  StreamController<SimpleMessage> _messagesStream = new StreamController<SimpleMessage>();
   
   ///
   /// Default ctor
@@ -94,5 +98,12 @@ abstract class WebServerBase
   void Close()
   {
     _isRunning = false;
+  }
+  
+  ///
+  /// Get stream of messages from users
+  Stream get MessagesStream
+  {
+    return _messagesStream.stream;
   }
 }

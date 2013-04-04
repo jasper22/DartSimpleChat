@@ -25,7 +25,7 @@ class EventStream<T>
   
   ///
   /// Rise an event
-  void Rise([T value])
+  void Raise([T value])
   {
     _eventStreamController.add(value);
   }

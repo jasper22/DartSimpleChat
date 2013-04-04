@@ -15,15 +15,18 @@ void main()
   
   serverBase.onError.listen(
       (errorData) {
-  
         print("Error occurred in web server. Error is: $errorData");
-      
       });
   
   if(serverBase.IsRunning)
   {
     print("Server running now");
   }
+  
+  serverBase.MessagesStream.listen((messageReceived) {
+    print("Message received from user: " + messageReceived.Text);
+    
+  });
   
   serverBase.Close();
   
