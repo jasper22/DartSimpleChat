@@ -1,10 +1,11 @@
 
 part of simplechat_server;
 
-
+///
+/// Server implmenetation based on web sockets
 class WebSocketServer extends WebServerBase
 {
-  HttpServer _mainServerInstance;
+  HttpServer _mainServerInstance = null;
   
   ///
   /// ctor
@@ -14,7 +15,28 @@ class WebSocketServer extends WebServerBase
         .then( (HttpServer createdServer) {
           _mainServerInstance = createdServer;
           
+          _onNotificationEvent.Rise("WebSocket server loaded at address: $address and port: $port");
+          
+          for(int iCounter =0; iCounter < 100; iCounter++)
+            _onNotificationEvent.Rise("Running $iCounter");
+          
         },
-        onError: (AsyncError e){});
+        onError: (AsyncError e){
+          _onErrorEvent.Rise(e);
+        });
+  }
+ 
+  ///
+  /// Stop and close web server
+  void Close()
+  {
+    if (_mainServerInstance != null)
+    {
+      _mainServerInstance.close();
+      
+      _onNotificationEvent.Rise("Server instance closed for server: $_serverAddress:$_serverPort");
+    }
+    
+    super.Close();
   }
 }
