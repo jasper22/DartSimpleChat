@@ -8,6 +8,7 @@ class WebSocketServer extends WebServerBase
   HttpServer _mainServerInstance = null;
   const String WEBSOCKET_SERVER_URI = "/ws";
   
+  
   ///
   /// Internal stream that will receive 'raw' HttpRequest messages 
   /// and convert them via [WebSocketTransformer] to web-socket messages
@@ -17,9 +18,12 @@ class WebSocketServer extends WebServerBase
   /// ctor
   WebSocketServer({String address:"127.0.0.1", int port:8080}) : super(address, port)
   {
+   
     _rawMessagesController.stream
             .transform(new WebSocketTransformer())
             .listen( (message) { _handleMessage(message); });
+    
+    logger.info("Starting server");
     
      Future<HttpServer> tmpServer = HttpServer.bind(address, port)
         .then( 

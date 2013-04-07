@@ -7,6 +7,10 @@ environment:
   sdk: '>=0.4.3'
 dependencies:
   unittest: any
+  log4dart:
+    git: git://github.com/ltackmann/log4dart.git
+  mongo_dart:
+    git: git://github.com/vadimtsushko/mongo_dart.git
 
 #dependencies:
 #  js: any
