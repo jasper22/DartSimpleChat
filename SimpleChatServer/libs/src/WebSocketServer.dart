@@ -18,10 +18,20 @@ class WebSocketServer extends WebServerBase
   /// ctor
   WebSocketServer({String address:"127.0.0.1", int port:8080}) : super(address, port)
   {
-   
+    //
+    // Upgrade HttpRequest object to WebSocket object
     _rawMessagesController.stream
             .transform(new WebSocketTransformer())
-            .listen( (message) { _handleMessage(message); });
+            .listen( (webSocket) 
+                      { 
+                        webSocket.listen(
+                                          (data) { _handleWebSocketData(data); }, 
+                                          onError: (exp) { _handleWebSocketError(exp); }, 
+                                          onDone: () { _handleWebSocketDone(); }
+                                        );
+                         
+                       }
+                    );
     
     logger.info("Starting server");
     
@@ -71,9 +81,23 @@ class WebSocketServer extends WebServerBase
     }
   }
 
-  void _handleMessage(message)
+  ///
+  /// Function will handle all incoming WebSocket messages
+  void _handleWebSocketData(message)
   {
-    print("Message is: $message");
-    super.MessagesStream.add(new SimpleMessage($message));
+    super.MessagesStream.add(new SimpleMessage(text:message));
   }
+  
+  
+  void _handleWebSocketError(Exception exp)
+  {
+    print ("Error occured in WebSocket: $exp");
+    throw exp;
+  }
+  
+  void _handleWebSocketDone()
+  {
+    print("WebSocket is done !");
+  }
+  
 }

@@ -9,7 +9,7 @@ class SimpleMessage
   
   ///
   /// ctor
-  SimpleMessage({String text:""})
+  SimpleMessage({String text:null})
   {
     this._text = text;
   }

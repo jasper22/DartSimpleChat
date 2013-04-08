@@ -6,6 +6,9 @@ homepage: https://github.com/jasper22/DartSimpleChat
 environment:
   sdk: '>=0.4.3'
 dependencies:
+  unittest: any
   js: any
   browser: any
   web_ui: any
+  log4dart:
+    git: git://github.com/ltackmann/log4dart.git

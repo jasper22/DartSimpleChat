@@ -97,12 +97,12 @@ abstract class WebServerBase
   }
   
   ///
-  /// Get stream of messages from users
-  Stream get MessagesStream
+  /// Get stream controller of messages from users
+  StreamController<SimpleMessage> get MessagesStream
   {
-    return _messagesStream.stream;
+    return _messagesStream;
   }
-  
+    
   ///
   /// Get the global logger
   Logger get logger

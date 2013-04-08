@@ -18,7 +18,7 @@ void main()
       });
   
  
-  serverBase.MessagesStream.listen((messageReceived) {
+  serverBase.MessagesStream.stream.listen((messageReceived) {
     print("Message received from user: " + messageReceived.Text);
     
   });
