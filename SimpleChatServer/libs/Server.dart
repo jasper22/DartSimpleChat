@@ -3,6 +3,7 @@ library simplechat_server;
 
 import 'dart:io';
 import 'dart:async';
+import 'dart:json' as JSON;
 import 'package:mongo_dart/mongo_dart.dart';
 import 'package:log4dart/log4dart_vm.dart';
 import 'package:DartSimpleChat_Shared/SimpleChatShared.dart';

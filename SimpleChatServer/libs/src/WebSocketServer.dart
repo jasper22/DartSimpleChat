@@ -53,7 +53,7 @@ class WebSocketServer extends WebServerBase
                       _onNotificationEvent.Raise("WebSocket received packet not for it");
                     }
                   }, 
-                  onError: (error) { _onErrorEvent.Raise(new ErrorData("Server error!", error)); }, 
+                  onError: (error) { _onErrorEvent.Raise(new ErrorData("Server error!", innerException:error)); }, 
                    onDone: ()      { print("Server is done listening");                          });
 
               _onNotificationEvent.Raise("WebSocket server loaded at address: $address and port: $port");              
@@ -77,15 +77,20 @@ class WebSocketServer extends WebServerBase
     {
       _mainServerInstance.close();
       
-      _onNotificationEvent.Rise("Server instance closed for server: $_serverAddress:$_serverPort");
+      _onNotificationEvent.Raise("Server instance closed for server: $_serverAddress:$_serverPort");
     }
   }
 
   ///
   /// Function will handle all incoming WebSocket messages
-  void _handleWebSocketData(message)
+  void _handleWebSocketData(String jsonMessageRaw)
   {
-    super.MessagesStream.add(new SimpleMessage(text:message));
+    var parse1 = JSON.parse(jsonMessageRaw);
+    var jsonRawMap = JSON.parse(parse1);
+    
+    SimpleMessage msg = new SimpleMessage.fromJson(jsonRawMap);
+    
+    super.MessagesStream.add(msg);
   }
   
   

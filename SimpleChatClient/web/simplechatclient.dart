@@ -46,7 +46,7 @@ void SendTestData()
   
   if (ws.readyState == WebSocket.OPEN)
   {
-    SimpleChatMessage msg = new SimpleMessage(text:"Hello from client");
+    SimpleMessage msg = new SimpleMessage(text:"Hello from client");
     ws.send(JSON.stringify(msg));
   }
   else

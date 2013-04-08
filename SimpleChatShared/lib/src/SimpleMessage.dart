@@ -15,6 +15,20 @@ class SimpleMessage
   }
   
   ///
+  /// Constructor that serialize [jsonRawMap] map to object
+  SimpleMessage.fromJson(Map<String,Object> jsonRawMap)
+  {
+    if (jsonRawMap.containsKey("text"))
+    {
+      this._text = jsonRawMap["text"];
+    }
+    else
+    {
+      this._text = null;
+    }
+  }  
+  
+  ///
   /// Get the text from message
   String get Text
   {
@@ -29,20 +43,6 @@ class SimpleMessage
     data["text"] = this._text;
     
     return JSON.stringify(data);
-  }
-  
-  ///
-  /// Serialize [jsonRawMap] object to class
-  void fromJson(Map<String,Object> jsonRawMap)
-  {
-    if (jsonRawMap.containsKey("text"))
-    {
-      this._text = jsonRawMap["text"];
-    }
-    else
-    {
-      this._text = null;
-    }
   }
 }
 
