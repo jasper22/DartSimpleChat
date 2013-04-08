@@ -1,4 +1,7 @@
 import 'dart:html';
+
+import 'dart:json';
+
 // import 'package:web_ui/web_ui.dart';
 import 'package:DartSimpleChat_Shared/SimpleChatShared.dart';
 
@@ -43,7 +46,8 @@ void SendTestData()
   
   if (ws.readyState == WebSocket.OPEN)
   {
-    ws.send(new SimpleMessage("Hello from client"));
+    SimpleChatMessage msg = new SimpleMessage(text:"Hello from client");
+    ws.send(JSON.stringify(msg));
   }
   else
   {
