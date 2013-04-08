@@ -27,19 +27,6 @@ class LocalLogger
   }
   
   /**
-   *  Get the global logger
-   */
-  Logger get logger
-  {
-    if (_logger == null)
-    {
-      _logger = _createLogger(this._logFileName, this._ifLogToConsole);
-    }
-    
-    return _logger;
-  }
-  
-  /**
    * Function will set-up the [log4dart] logger
    * 
    * Return fully configured [Logger]
@@ -92,4 +79,31 @@ class LocalLogger
     
     return LoggerFactory.getLogger("SimpleChatServer_WebSocketServer");
   }  
+  
+  
+  /**
+   * Log 'information' message
+   */
+  void LogInfo(String message)
+  {
+    if (_logger == null)
+    {
+      _logger = _createLogger(this._logFileName, this._ifLogToConsole);
+    }
+    
+    this._logger.info(message);
+  }
+  
+  /**
+   * Log error message
+   */
+  void LogError(String message)
+  {
+    if (_logger == null)
+    {
+      _logger = _createLogger(this._logFileName, this._ifLogToConsole);
+    }
+    
+    _logger.error(message);
+  }
 }

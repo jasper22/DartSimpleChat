@@ -9,6 +9,8 @@ class MongoDatabase extends DatabaseBase
   
   String _connectionString;
   
+  LocalLogger _localLogger;
+  
   /**
    *  Default ctor
    *   
@@ -21,14 +23,34 @@ class MongoDatabase extends DatabaseBase
    *      [userName] User name to connect with
    *      [password] Password to use
    *      [dbPort] Database port to connect
+   *      [logger] Logger facility
    */
-  MongoDatabase(String serverAddress, String databaseName, [String userName = null, String password = null, int dbPort = null]) : super(serverAddress, userName, password, dbPort, databaseName)
+  MongoDatabase(String serverAddress, String databaseName, {LocalLogger logger:null, String userName:null, String password:null, int dbPort:null}) : super(serverAddress, userName, password, dbPort, databaseName)
   {
+    _localLogger = logger;
+    
     _connectionString = _createConnectionString(serverAddress, userName, password, dbPort, databaseName);
     
     if (_connectionString.isEmpty == false)
     {
-      _mainDb = new MONGO.Db(_connectionString);
+      try
+      {
+        _mainDb = new MONGO.Db(_connectionString);
+        
+        if (_localLogger != null)
+        {
+          _localLogger.LogInfo("MongoDb connected success: $_connectionString");
+        }
+      }
+      catch (exp)
+      {
+        if (_localLogger != null)
+        {
+          _localLogger.LogError("Exception occurred while trying to open connection to MongoDb\nConnection string is: $_connectionString \nError is: $exp");
+        }
+          
+        throw exp;
+      }
     }
     else
     {

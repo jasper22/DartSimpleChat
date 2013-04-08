@@ -44,7 +44,7 @@ class WebSocketServer extends WebServerBase
     
     if (_localLogger != null)
     {
-      _localLogger.logger.info("Starting server");
+      _localLogger.LogInfo("Starting server");
     }
     
      Future<HttpServer> tmpServer = HttpServer.bind(address, port)

@@ -16,7 +16,7 @@ void main()
   LocalLogger _localLogger = new LocalLogger(_logFileName, true);
   
   WebServerBase serverBase = new WebSocketServer(logger:_localLogger);
-  DatabaseBase databaseBase = new MongoDatabase("127.0.0.1", "simplechat-db");
+  DatabaseBase databaseBase = new MongoDatabase("127.0.0.1", "simplechat-db", logger:_localLogger);
   
   //
   // Events
