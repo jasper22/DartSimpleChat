@@ -1,6 +1,6 @@
 import 'dart:html';
 
-import 'dart:json';
+import 'dart:json' as JSON;
 
 // import 'package:web_ui/web_ui.dart';
 import 'package:DartSimpleChat_Shared/SimpleChatShared.dart';

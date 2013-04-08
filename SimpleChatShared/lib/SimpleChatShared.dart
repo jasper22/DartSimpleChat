@@ -1,6 +1,6 @@
 library simplechat_shared;
 
-import 'dart:json';
+import 'dart:json' as JSON;
 
 
 part 'src/SimpleMessage.dart';
