@@ -10,4 +10,4 @@ part 'src/WebServerBase.dart';
 part 'src/ErrorData.dart';
 part 'src/WebSocketServer.dart';
 part 'src/EventStream.dart';
-part '../../SimpleChatShared/lib/SimpleMessage.dart';
+part '../../SimpleChatShared/src/SimpleMessage.dart';

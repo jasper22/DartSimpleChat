@@ -1,7 +1,7 @@
 name: DartSimpleChat_Shared
 version: 0.0.1
 author: Aleksandr (jjasper22@gmail.com)
-description: '''Sahred'' parts for Simple Dart based chat server'
+description: '''Shared'' parts for Simple Dart based chat server'
 homepage: https://github.com/jasper22/DartSimpleChat
 environment:
   sdk: '>=0.4.3'

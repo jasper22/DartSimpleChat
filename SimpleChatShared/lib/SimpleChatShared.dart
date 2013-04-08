@@ -1,4 +1,4 @@
 library simplechat_shared;
 
 
-part 'SimpleMessage.dart';
+part 'src/SimpleMessage.dart';

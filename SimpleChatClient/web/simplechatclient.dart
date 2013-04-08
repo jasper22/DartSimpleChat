@@ -1,5 +1,6 @@
 import 'dart:html';
 // import 'package:web_ui/web_ui.dart';
+import 'package:DartSimpleChat_Shared/SimpleChatShared.dart';
 
 // initial value for click-counter
 int startingCount = 5;
@@ -42,7 +43,7 @@ void SendTestData()
   
   if (ws.readyState == WebSocket.OPEN)
   {
-    ws.send("Hello from client");
+    ws.send(new SimpleMessage("Hello from client"));
   }
   else
   {

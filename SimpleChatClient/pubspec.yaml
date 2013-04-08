@@ -6,6 +6,8 @@ homepage: https://github.com/jasper22/DartSimpleChat
 environment:
   sdk: '>=0.4.3'
 dependencies:
+  DartSimpleChat_Shared:
+    path: ../SimpleChatShared
   unittest: any
   js: any
   browser: any
