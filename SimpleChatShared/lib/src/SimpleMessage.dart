@@ -6,11 +6,18 @@ part of simplechat_shared;
 class SimpleMessage
 {
   String _text;
+  String _to;
+  String _from;
   
   ///
   /// ctor
-  SimpleMessage({String text:null})
+  /// [from] is current user
+  /// [to] the 'taget' user (optional - default is to 'server')
+  /// [text] message to send (optional)
+  SimpleMessage(String from, {String to:null, String text:null})
   {
+    this._to = to;
+    this._from = from;
     this._text = text;
   }
   
@@ -18,15 +25,27 @@ class SimpleMessage
   /// Constructor that serialize [jsonRawMap] map to object
   SimpleMessage.fromJson(Map<String,Object> jsonRawMap)
   {
-    if (jsonRawMap.containsKey("text"))
+    if (jsonRawMap != null)
     {
-      this._text = jsonRawMap["text"];
-    }
-    else
-    {
-      this._text = null;
+      this._from = jsonRawMap["from"];
+      this._to = jsonRawMap["to"];
+      this._text = jsonRawMap["text"];      
     }
   }  
+  
+  ///
+  /// Get the user ID of the sender
+  String get From
+  {
+    return this._from;
+  }
+  
+  ///
+  /// Get the user ID of 'target' user
+  String get To
+  {
+    return this._to;
+  }
   
   ///
   /// Get the text from message
@@ -40,10 +59,11 @@ class SimpleMessage
   String toJson()
   {
     Map<String, Object> data = new Map<String, Object>();
+    
+    data["from"] = this._from;
+    data["to"] = this._to;
     data["text"] = this._text;
     
     return JSON.stringify(data);
   }
 }
-
-

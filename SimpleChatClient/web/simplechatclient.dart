@@ -4,6 +4,7 @@ import 'dart:json' as JSON;
 
 // import 'package:web_ui/web_ui.dart';
 import 'package:DartSimpleChat_Shared/SimpleChatShared.dart';
+import 'package:uuid/uuid.dart';
 
 // initial value for click-counter
 int startingCount = 5;
@@ -46,7 +47,11 @@ void SendTestData()
   
   if (ws.readyState == WebSocket.OPEN)
   {
-    SimpleMessage msg = new SimpleMessage(text:"Hello from client");
+    var generator = new Uuid();
+    String localFrom = generator.v1().toString();
+    String localTo = generator.v1().toString();
+    
+    SimpleMessage msg = new SimpleMessage(localFrom, to:localTo, text:"Hello from client");
     ws.send(JSON.stringify(msg));
   }
   else

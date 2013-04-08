@@ -12,5 +12,7 @@ dependencies:
   js: any
   browser: any
   web_ui: any
+  uuid:
+    git: https://github.com/Daegalus/dart-uuid.git
   log4dart:
     git: git://github.com/ltackmann/log4dart.git

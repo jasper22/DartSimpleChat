@@ -19,7 +19,7 @@ void main()
   
  
   serverBase.MessagesStream.stream.listen((messageReceived) {
-    print("Message received from user: " + messageReceived.Text);
+    print("Message received from user [" + messageReceived.From + "] : " + messageReceived.Text);
     
   });
   
