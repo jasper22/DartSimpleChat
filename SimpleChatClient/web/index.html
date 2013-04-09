@@ -2,16 +2,293 @@
 
 <html>
   <head>
-    <title>index</title>
-  </head>
- 
-  <body>   
-    <p id="text"></p> 
-    
-    <button id="btnSendToServer" style="width:100px;height:60px;"></button>
+    <title>Simple chat in Dart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=0">
+    <!-- BEGIN REQUIRED STYLES -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/superfish.css">
+    <link rel="stylesheet" type="text/css" href="css/flexslider.css">
     
     <script type="application/dart" src="simplechatclient.dart"></script>
-    <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
     <script src="packages/browser/dart.js"></script>
+  </head>
+ 
+  <body>
+    <div class="body_wrapper">
+      <header>
+        <div class="container">
+          <div class="top_header">
+            <div class="five columns">
+              <div class="logo">
+                <img src="img/logo.png" alt="">
+              </div>
+            </div>
+            <div class="main_nav">
+              <nav>
+                <ul id="menu">
+                  <li><a href="#">Home</a>
+                  <ul>
+                    <li><a href="index-2.html">Home Layout 1</a></li>
+                    <li><a href="index_layout2.html">Home Layout 2</a></li>
+                    <li><a href="index_layout3.html">Home Layout 3</a></li>
+                  </ul>
+                  </li>
+                  <li><a href="#">Sliders</a>
+                  <ul>
+                    <li><a href="sliders_3d_slider.html">3D Slider</a></li>
+                    <li><a href="sliders_flex_slider.html">Flex Slider</a></li>
+                    <li><a href="sliders_nivo_slider.html">Nivo Slider</a></li>
+                  </ul>
+                  </li>
+                  <li><a href="#">Shortcodes</a>
+                  <ul>
+                    <li><a href="shortcodes_elements.html">Elements</a></li>
+                    <li><a href="shortcodes_pricing.html">Pricing</a></li>
+                    <li><a href="shortcodes_typography.html">Typography</a></li>
+                  </ul>
+                  </li>
+                  <li><a href="#">Pages</a>
+                  <ul>
+                    <li><a href="pages_about_us.html">About us</a></li>
+                    <li><a href="pages_about_us_2.html">About us 2</a></li>
+                    <li><a href="pages_fullwidth.html">Fullwidth</a></li>
+                    <li><a href="pages_services.html">Services</a></li>
+                    <li><a href="pages_sidebar_left.html">Page Sidebar Left</a></li>
+                    <li><a href="pages_sidebar_right.html">Page Sidebar Right</a></li>
+                    <li><a href="pages_404.html">404</a></li>
+                  </ul>
+                  </li>
+                  <li><a href="#">Portfolio</a>
+                  <ul>
+                    <li><a href="#">Portfolio w / desc</a>
+                    <ul>
+                      <li><a href="portfolio_1column_desc.html">Portfolio 1 Column</a></li>
+                      <li><a href="portfolio_2columns_desc.html">Portfolio 2 Columns</a></li>
+                      <li><a href="portfolio_3columns_desc.html">Portfolio 3 Columns</a></li>
+                      <li><a href="portfolio_4columns_desc.html">Portfolio 4 Columns</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Portfolio no desc</a>
+                    <ul>
+                      <li><a href="portfolio_1column.html">Portfolio 1 Column</a></li>
+                      <li><a href="portfolio_2columns.html">Portfolio 2 Columns</a></li>
+                      <li><a href="portfolio_3columns.html">Portfolio 3 Columns</a></li>
+                      <li><a href="portfolio_4columns.html">Portfolio 4 Columns</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="portfolio_single_sidebar_left.html">Portfolio Single Sidebar Left</a></li>
+                    <li><a href="portfolio_single_sidebar_right.html">Portfolio Single Sidebar Right</a></li>
+                  </ul>
+                  </li>
+                  <li><a href="#">Blog</a>
+                  <ul>
+                    <li><a href="blog_sidebar_left.html">Sidebar Left</a></li>
+                    <li><a href="blog_sidebar_right.html">Sidebar Right</a></li>
+                    <li><a href="blog_post.html">Blog Post</a></li>
+                  </ul>
+                  </li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <select class="resp_navigation">
+                  <option value="" selected="selected"> -- Navigate to .. </option>
+                  <option value="index.html"> - - Home</option>
+                  <option value="index.html"> - - - Home Layout 1</option>
+                  <option value="index_layout2.html"> - - - Home Layout 2</option>
+                  <option value="index_layout3.html"> - - - Home Layout 3</option>
+                  <option value="#"> -- Sliders </option>
+                  <option value="sliders_3d_slider.html"> - - - 3D Slider </option>
+                  <option value="sliders_flex_slider.html"> - - - Flex Slider </option>
+                  <option value="sliders_nivo_slider.html"> - - - Nivo Slider </option>
+                  <option value="#"> -- Shortcodes </option>
+                  <option value="shortcodes_elements.html"> - - - Elements </option>
+                  <option value="shortcodes_pricing.html"> - - - Pricing Tables </option>
+                  <option value="shortcodes_typography.html"> - - - Typography </option>
+                  <option value="#"> - - Pages </option>
+                  <option value="pages_about_us.html"> - - - About us </option>
+                  <option value="pages_about_us_2.html"> - - - About us 2 </option>
+                  <option value="pages_fullwidth.html"> - - - Fullwidth Page </option>
+                  <option value="pages_services.html"> - - - Services </option>
+                  <option value="pages_sidebar_left.html"> - - - Page Sidebar Left </option>
+                  <option value="pages_sidebar_right.html"> - - - Page Sidebar Right </option>
+                  <option value="pages_404.html"> - - - 404 Error Page </option>
+                  <option value="#"> - - Portfolio with Desc </option>
+                  <option value="portfolio_1column_desc.html"> - - - Portfolio 1 Column </option>
+                  <option value="portfolio_2columns_desc.html"> - - - Portfolio 2 Columns </option>
+                  <option value="portfolio_3columns_desc.html"> - - - Portfolio 3 Columns </option>
+                  <option value="portfolio_4columns_desc.html"> - - - Portfolio 4 Columns </option>
+                  <option value="#"> - - Portfolio without Desc </option>
+                  <option value="portfolio_1column.html"> - - - Portfolio 1 Column </option>
+                  <option value="portfolio_2columns.html"> - - - Portfolio 2 Columns </option>
+                  <option value="portfolio_3columns.html"> - - - Portfolio 3 Columns </option>
+                  <option value="portfolio_4columns.html"> - - - Portfolio 4 Columns </option>
+                  <option value="portfolio_single_sidebar_left.html"> - - - Portfolio Single Left </option>
+                  <option value="portfolio_single_sidebar_right.html"> - - - Portfolio Single Right </option>
+                  <option value="#"> - - Blog </option>
+                  <option value="blog_sidebar_left.html"> - - - Blog Sidebar Left </option>
+                  <option value="blog_sidebar_right.html"> - - - Blog Sidebar Right </option>
+                  <option value="blog_post.html"> - - - Blog Post </option>
+                  <option value="contact.html"> - - Contact </option>
+                </select>
+              </nav>
+                <!-- nav -->
+           </div>
+         <!-- top header -->
+         </div>
+      <!-- container -->
+      </div>
+    <!-- header -->
+    </header>
+    
+    <div class="static_slide">
+      <div class="container">
+        <div class="first six columns alpha ipad">
+          <img src="img/ipad1.png" alt="">
+        </div>
+        <!-- first -->
+        <div class="seven columns second ipad">
+          <img src="img/ipad2.png" alt="">
+          <div class="clear">
+          </div>
+        </div>
+        <div class="four columns newsletter">
+          <h3>Welcome to Nemu</h3>
+          <p>
+            Responsive HTML Business Theme
+          </p>
+          <form action="#">
+            <input type="text" value="type your email ..." onfocus="if (this.value == 'type your email ...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'type your email ...';}">
+            <div class="button">
+               Join to new Ousletter
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- container -->
+    </div>
+    
+    
+    <div class="container">
+      <div class="three columns">
+        <h5>Nemu chat</h5>
+      </div>
+      <div class="thirteen columns">
+         <img src="img/line_white_full.jpg" alt="" class="separator">
+      </div>
+      <div class="clear"></div>
+        <!-- content her -->
+      <div class="clear"></div>
+    </div>
+    
+    <div class="container">
+      <div class="eight columns">
+        <div id="allUsers">
+          <h5>Online</h5>
+          <img src="img/line_white.jpg" alt="" class="separator">
+          <div class="clear"></div>
+            <!-- content her -->
+          <div class="clear"></div>
+        </div>
+      </div>
+
+      <div class="eight columns">
+        <div id="chatWindow">
+          <h5>Chat</h5>
+          <img src="img/line_white.jpg" alt="" class="separator">
+          <div class="clear"></div>
+            <!-- content her -->
+
+          <button id="btnSendToServer" style="width:100px;height:60px;"></button>
+          <div class="clear"></div>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+     
+      
+    <footer>
+    <div class="line">
+    </div>
+    <div class="container">
+        <div class="four columns">
+            <div class="footer_about">
+                <img src="img/logo_footer.png" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper elit ac nibh faucibus conolor massa eget justo. Vestibulum antr nunc eu odio bibendum rhoncus.
+                </p>
+            </div>
+            <!-- footer about -->
+        </div>
+        <!-- four -->
+        <div class="four columns">
+            <div class="footer_ppost">
+                <h5>Popular Posts</h5>
+                <div class="ppost">
+                    <img src="img/footer/ppost1.jpg" alt="">
+                    <p class="heading">
+                        <a href="#">Macecenas tindicitnus neque.</a>
+                    </p>
+                    <p class="date">
+                         Jan 21, 2013
+                    </p>
+                </div>
+                <!-- ppost -->
+                <div class="ppost">
+                    <img src="img/footer/ppost2.jpg" alt="">
+                    <p class="heading">
+                        <a href="#">Etiam venenatis urna quis.</a>
+                    </p>
+                    <p class="date">
+                         Feb 21, 2013
+                    </p>
+                </div>
+                <!-- ppost -->
+            </div>
+            <!-- footer_ppost -->
+        </div>
+        <!-- four -->
+        <div class="four columns">
+            <div class="footer_tag_cloud">
+                <h5>Tag Cloud</h5>
+                <ul>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">web design</a></li>
+                    <li><a href="#">travel</a></li>
+                    <li><a href="#">internet</a></li>
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">videos</a></li>
+                    <li><a href="#">photography</a></li>
+                    <li><a href="#">corporate</a></li>
+                    <li><a href="#">responsive</a></li>
+                    <li><a href="#">image</a></li>
+                    <li><a href="#">audio</a></li>
+                </ul>
+            </div>
+            <!-- footer_tag_cloud -->
+        </div>
+        <!-- four -->
+        <div class="four columns">
+            <div class="footer_photostream">
+                <h5>Photostream</h5>
+                <ul>
+                    <li><a href="#"><img src="img/footer/photo1.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="img/footer/photo2.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="img/footer/photo3.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="img/footer/photo4.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="img/footer/photo5.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="img/footer/photo6.jpg" alt=""></a></li>
+                </ul>
+            </div>
+            <!-- footer_photostream -->
+        </div>
+        <!-- four -->
+    </div>
+    <!-- container -->
+    </footer>      
   </body>
 </html>
