@@ -8,3 +8,10 @@ packages
 *.dart.js
 *.dart.js.map
 *.dart.js.deps
+*.buildlog
+
+#
+# Folders to ignore
+
+**/web/out/
+log/
