@@ -21,27 +21,26 @@ void main() {
   // Enable this to use Shadow DOM in the browser.
   //useShadowDom = true;
   
-  ws = new WebSocket('ws://127.0.0.1:8080/ws');
+//  ws = new WebSocket('ws://127.0.0.1:8080/ws');
    
 //  ButtonElement btnSend = query('#btnSendToServer') as ButtonElement;
 //  btnSend.text = "Click to send to server";
   
-  DivElement btnSend = query('#btnSendToServer') as DivElement;
+//  DivElement btnSend = query('#btnSendToServer') as DivElement;
   
-  btnSend.onClick.listen(
-      (data)
-      {
-        SendTestData();
-      },
-      onError: (ex)
-                { print("Error occurred $ex"); }, 
-      onDone: ()
-              {
-                print("Done");
-              }
-      );
+//  btnSend.onClick.listen(
+//     (data)
+//      {
+//        SendTestData();
+//      },
+//      onError: (ex)
+//                { print("Error occurred $ex"); }, 
+//      onDone: ()
+//              {
+//                print("Done");
+//              }
+//      );
 }
-
 
 void SendTestData()
 {

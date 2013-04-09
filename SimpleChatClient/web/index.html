@@ -13,6 +13,11 @@
     <link rel="stylesheet" type="text/css" href="css/superfish.css">
     <link rel="stylesheet" type="text/css" href="css/flexslider.css">
     
+    <!-- BEGIN DART COMPONENTS -->
+    <link rel="components" href="gui/online_users.html">      
+    <link rel="components" href="gui/chat_window.html">
+    
+    <!-- DART BOOTSTRAP -->
     <script type="application/dart" src="simplechatclient.dart"></script>
     <script src="packages/browser/dart.js"></script>
   </head>
@@ -172,6 +177,9 @@
       <!-- container -->
     </div>
     
+    <br />
+    <div class="clear"></div>
+    <br />
     
     <div class="container">
       <div class="three columns">
@@ -191,7 +199,7 @@
           <h5>Online</h5>
           <img src="img/line_white.jpg" alt="" class="separator">
           <div class="clear"></div>
-            <!-- content her -->
+            <div is="x-online-users"></div>
           <div class="clear"></div>
         </div>
       </div>
@@ -201,22 +209,7 @@
           <h5>Chat</h5>
           <img src="img/line_white.jpg" alt="" class="separator">
           <div class="clear"></div>
-            <!-- content her -->
-
-            <div class="four columns">
-                <div id="btnSendToServer" class="large_button lblue">  <!-- 'lgray'  for disabled button -->
-                    <a href="#">Send</a>
-<!--          <button id="btnSendToServer" style="width:100px;height:60px;"></button> -->                    
-                </div>
-            </div>              
-
-<!--
-            <div class="four columns">
-                <div class="small_button lblue">
-                    <a href="#">Small Button</a>
-                </div>
-            </div>
--->
+            <div is="x-chat-window"></div>
           <div class="clear"></div>
         </div>
       </div>
