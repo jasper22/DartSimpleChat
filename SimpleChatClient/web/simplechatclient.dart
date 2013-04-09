@@ -23,8 +23,10 @@ void main() {
   
   ws = new WebSocket('ws://127.0.0.1:8080/ws');
    
-  ButtonElement btnSend = query('#btnSendToServer') as ButtonElement;
-  btnSend.text = "Click to send to server";
+//  ButtonElement btnSend = query('#btnSendToServer') as ButtonElement;
+//  btnSend.text = "Click to send to server";
+  
+  DivElement btnSend = query('#btnSendToServer') as DivElement;
   
   btnSend.onClick.listen(
       (data)

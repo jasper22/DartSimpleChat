@@ -8,7 +8,7 @@
 */
 
 
-
+   
 /* Table of Contents
 ==================================================
     
@@ -172,7 +172,7 @@ background: -webkit-gradient(linear, 0 0, 0 100%, from(#3fd5fa), to(#17598c));ba
 ================================================== */
 
 
-.static_slide {background: url(../img/bg.jpg); margin:30px 0;}
+.static_slide {background: url('../img/bg.jpg'); margin:30px 0;}
 .static_slide .first {float: left; padding-top: 120px;}
 .static_slide .second {padding-top: 55px; position:relative; left:-120px; float: left;}
 .static_slide .newsletter {padding-top: 90px;}
