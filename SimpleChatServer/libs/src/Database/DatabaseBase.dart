@@ -16,6 +16,8 @@ abstract class DatabaseBase
   
   String _databaseName;
   
+  static const String DB_MESSAGES_TABLE_NAME = "tblMessages";
+  
   /**
   * Default [DatabaseBase] object constructor
   * All parameters are optional
@@ -73,4 +75,9 @@ abstract class DatabaseBase
   {
     return _databaseName;
   }
+  
+  /**
+   * Function will insert new message to database
+   */
+  Future AddMessage(SimpleMessage message);
 }

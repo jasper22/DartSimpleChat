@@ -12,16 +12,17 @@
     <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
     <link rel="stylesheet" type="text/css" href="css/superfish.css">
     <link rel="stylesheet" type="text/css" href="css/flexslider.css">
-    
+
     <!-- BEGIN DART COMPONENTS -->
-    <link rel="components" href="gui/online_users.html">      
+    <link rel="components" href="gui/online_users.html">
     <link rel="components" href="gui/chat_window.html">
-    
+    <link rel="components" href="gui/login_window.html">
+
     <!-- DART BOOTSTRAP -->
     <script type="application/dart" src="simplechatclient.dart"></script>
     <script src="packages/browser/dart.js"></script>
   </head>
- 
+
   <body>
     <div class="body_wrapper">
       <header>
@@ -98,7 +99,7 @@
                   </li>
                   <li><a href="contact.html">Contact</a></li>
                 </ul>
-<!--                
+<!--
                 <select class="resp_navigation">
                   <option value="" selected="selected"> -- Navigate to .. </option>
                   <option value="index.html"> - - Home</option>
@@ -139,7 +140,7 @@
                   <option value="blog_post.html"> - - - Blog Post </option>
                   <option value="contact.html"> - - Contact </option>
                 </select>
--->                
+-->
               </nav>
                 <!-- nav -->
            </div>
@@ -149,7 +150,7 @@
       </div>
     <!-- header -->
     </header>
-    
+
     <div class="static_slide">
       <div class="container">
         <div class="first six columns alpha ipad">
@@ -176,11 +177,11 @@
       </div>
       <!-- container -->
     </div>
-    
+
     <br />
     <div class="clear"></div>
     <br />
-    
+
     <div class="container">
       <div class="three columns">
         <h5>Nemu chat</h5>
@@ -190,9 +191,11 @@
       </div>
       <div class="clear"></div>
         <!-- content her -->
+
+        <div is="x-google-login"></div>
       <div class="clear"></div>
     </div>
-    
+
     <div class="container">
       <div class="eight columns">
         <div id="allUsers">
@@ -213,13 +216,13 @@
           <div class="clear"></div>
         </div>
       </div>
-      
-      
+
+
     </div>
-    
+
     <!-- body_wrapper -->
     </div>
-     
+
     <footer>
       <div class="line">
       </div>
@@ -298,6 +301,6 @@
           <!-- four -->
       </div>
       <!-- container -->
-    </footer>      
+    </footer>
   </body>
 </html>

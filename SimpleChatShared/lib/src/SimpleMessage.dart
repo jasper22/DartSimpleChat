@@ -65,12 +65,21 @@ class SimpleMessage
    */
   String toJson()
   {
+    Map<String, Object> data = this.toMap();
+    return JSON.stringify(data);
+  }
+  
+  /**
+   * Serialize object state to Map<String, Object> 
+   */
+  Map<String, Object> toMap()
+  {
     Map<String, Object> data = new Map<String, Object>();
     
     data["from"] = this._from;
     data["to"] = this._to;
     data["text"] = this._text;
-    
-    return JSON.stringify(data);
+
+    return data;
   }
 }

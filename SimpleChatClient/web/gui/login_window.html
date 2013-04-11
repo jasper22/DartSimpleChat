@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <element name="x-google-login" constructor="GoolgePlusLogin" extends="div">
+      <template>
+
+        <style>
+          div {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            display: block;
+          }
+
+          .chat.column {
+            float: left;
+            display: inline;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
+          }
+
+
+          .large_button, .medium_button, .small_button {
+            margin-top: 50px;
+          }
+
+          .large_button.lblue a, .medium_button.lblue a, .small_button.lblue a {
+            background-color: #30a3d1;
+          }
+
+          .large_button a, .medium_button a, .small_button a {
+            padding: 12px 25px;
+            color: #ebebeb;
+            font-family: 'OswaldBook';
+            text-transform: uppercase;
+            font-size: 15px;
+            border-radius: 2px;
+          }
+
+          a {
+            text-decoration: none;
+            margin: 0;
+            border: 0;
+            vertical-align: baseline;
+          }
+
+          .large_button.lgray a, .medium_button.lgray a, .small_button.lgray a {
+            background-color: #adadad;
+          }
+
+          .large_button.green a, .medium_button.green a, .small_button.green a {
+            background-color: #80d38d;
+          }
+
+        </style>
+
+        <div>
+          <div id="gConnect">
+            <button class="g-signin"
+                data-scope="https://www.googleapis.com/auth/plus.login"
+                data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                data-clientId="568630157444.apps.googleusercontent.com"
+                data-callback="onSignInCallback"
+                data-theme="dark"
+                data-cookiepolicy="single_host_origin">
+            </button>
+          </div>
+        </div>
+
+        <h2>Authentication Logs</h2>
+        <pre id="authResult"></pre>
+
+      </template>
+    <script type="application/dart" src="login_window.dart"></script>
+    </element>
+  </body>
+</html>
