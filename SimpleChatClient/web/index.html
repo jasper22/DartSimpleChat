@@ -18,6 +18,15 @@
     <link rel="components" href="gui/chat_window.html">
     <link rel="components" href="gui/login_window.html">
 
+    <!-- Place this asynchronous JavaScript just before your </body> tag -->
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+
     <!-- DART BOOTSTRAP -->
     <script type="application/dart" src="simplechatclient.dart"></script>
     <script src="packages/browser/dart.js"></script>
